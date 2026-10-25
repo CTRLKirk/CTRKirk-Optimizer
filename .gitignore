@@ -1,0 +1,15 @@
+# User-generated output (logs, snapshots, reports)
+Logs/
+SafetyRuns/
+Backups/
+MalwareScanner/Reports/
+
+# Saved personal preference profiles
+.devin/profiles/
+
+# Downloaded third-party tools (not redistributable)
+Tools/*.exe
+
+# Temp / scratch
+nul
+*.tmp

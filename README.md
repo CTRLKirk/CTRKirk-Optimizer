@@ -79,4 +79,6 @@ Tests use simulated values and disposable registry keys/files — no real system
 
 ## Feedback welcome
 
-This is a personal project built for a weak laptop. If something breaks, the `Developer.jsonl` in the affected run folder will show exactly where — please include it in any issue.
+This started as a personal project — I built it for my own weak laptop because I needed it, and it's what I actually run on my own rig. It was tailored to me first; I decided to release it to get some opinions on it.
+
+If something breaks, the `Developer.jsonl` in the affected run folder will show exactly where — please include it in any issue.

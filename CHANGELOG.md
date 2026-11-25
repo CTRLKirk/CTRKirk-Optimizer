@@ -1,5 +1,13 @@
 # Changelog — CTRLKirk Optimizer
 
+## v1.0.1 — 2026-11-25 (unreleased tag)
+- Workbench [7] System health check: read-only RAM/commit/paging/CPU/GPU/disk/
+  power report with plain-English warnings.
+- Workbench [8] Safe cache cleaner: scan-first regenerable-cache deletion with
+  per-category sizes, typed consent, locked-file skips, per-file audit log,
+  free-space reporting, and a read-only AppData deep scan.
+- Project knowledge base docs added at repo root.
+
 ## v1.0 — 2026-10-25 (public release)
 - Initial public commit + release zip `CTRKirk-Optimizer-v1.0.zip`.
 - Consent-first settings engine: preview → APPLY, per-value snapshot journal,

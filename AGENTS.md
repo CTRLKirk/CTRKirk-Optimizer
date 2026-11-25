@@ -13,3 +13,16 @@
 - Save named project preferences under `.devin/profiles/`. Standard/Advanced offers load/new/manual/cancel; replacing a name requires REPLACE. Profiles contain only allowlisted setting IDs, with omitted IDs meaning preserve current values. Never add command strings or unattended destructive actions.
 - `OptimizerPaths.ps1` centralizes English ordinal date names and atomic same-minute collision handling. New output belongs in `Logs/Sessions`, `Logs/Safety Runs`, and `Logs/Security Inventories`; launcher logs append daily. Restore must keep discovering old `SafetyRuns` snapshots, sorted by creation time, without moving/deleting historical files.
 - Native process exit codes and failures are logged through Invoke-NativeLogged. Command completion is not proof of successful repair or a performance gain.
+
+## Knowledge base
+
+This project keeps durable project memory in root-level docs. Consult them in this order:
+
+1. `CONSTRAINTS.md` and `CURRENT_STATE.md` — always, before any change.
+2. `DECISIONS.md` — before changing established implementations (e.g., why legacy paths stay inert).
+3. `CODEMAP.md` / `SYSTEMS.md` — where code lives and how subsystems interact.
+4. `KNOWN_ISSUES.md` / `TASK_HISTORY.md` — prior failures and completed work.
+5. `CHANGELOG.md` — significant verified changes over time.
+6. `PROJECT_CONTEXT.md` — purpose, architecture, status overview.
+
+Existing docs that remain authoritative: `README.md` (public overview), `README.txt` (user manual), `MalwareScanner/README_v4.txt` (scanner).

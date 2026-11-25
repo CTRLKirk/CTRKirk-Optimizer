@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('Standard','Advanced','Auto','Restore','Diagnostics','Preferences','Power','Workbench','Dashboard','Startup','Cleanup','Maintenance','Tools')][string]$Mode = 'Standard',
+    [ValidateSet('Standard','Advanced','Auto','Restore','Diagnostics','Preferences','Power','Workbench','Dashboard','Startup','Cleanup','Maintenance','Tools','Health','CacheCleaner')][string]$Mode = 'Standard',
     [switch]$PreviewOnly,
     [switch]$SelfTest
 )
@@ -336,14 +336,15 @@ try {
     if ($Mode -eq 'Workbench') {
         Write-Host 'LAPTOP WORKBENCH'
         Write-Host '[1] Dashboard / measurements [2] Startup and apps [3] Temporary-file cleanup'
-        Write-Host '[4] Windows repair / network troubleshooting [5] Laptop power plans [6] Saved preferences [0] Back'
+        Write-Host '[4] Windows repair / network troubleshooting [5] Laptop power plans [6] Saved preferences'
+        Write-Host '[7] System health check (read only) [8] Safe cache cleaner [0] Back'
         if ($PreviewOnly) { $outcome = 'Workbench menu preview; no system changes'; return }
-        $target = switch (Read-Host 'Choice') { '1' { 'Dashboard' } '2' { 'Startup' } '3' { 'Cleanup' } '4' { 'Maintenance' } '5' { 'Power' } '6' { 'Preferences' } default { '' } }
+        $target = switch (Read-Host 'Choice') { '1' { 'Dashboard' } '2' { 'Startup' } '3' { 'Cleanup' } '4' { 'Maintenance' } '5' { 'Power' } '6' { 'Preferences' } '7' { 'Health' } '8' { 'CacheCleaner' } default { '' } }
         if (-not $target) { $outcome = 'Workbench cancelled; no system changes'; return }
         $Mode = $target
         Write-Event 'WorkbenchSelection' '' $Mode
     }
-    if ($Mode -in @('Dashboard','Startup','Cleanup','Maintenance','Tools')) {
+    if ($Mode -in @('Dashboard','Startup','Cleanup','Maintenance','Tools','Health','CacheCleaner')) {
         Invoke-FeatureMode $Mode ([bool]$PreviewOnly)
         $outcome = "$Mode workflow finished; review individual results"
         return

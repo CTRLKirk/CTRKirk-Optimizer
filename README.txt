@@ -82,6 +82,16 @@ WORKBENCH [7]
       edited. Modern Standby laptops may expose only Balanced. High Performance
       can increase heat/battery drain or worsen throttling; it is NOT assumed best.
   [6] Saved preferences: choose and save the feature choices without applying them.
+  [7] System health check: read-only RAM/commit/paging/CPU/GPU/disk/power report
+      with plain-English warnings (e.g. commit charge above physical RAM).
+  [8] Safe cache cleaner: scans regenerable caches first (user/Windows temp,
+      pip, NVIDIA driver downloads, Steam download/temp/shader caches,
+      browser/app cache folders only - never cookies or logins, Windows Update
+      downloads, Recycle Bin, FiveM data with extra confirm), shows per-category
+      sizes, deletes only on typed consent, skips locked/in-use files, writes a
+      per-file audit log, and reports reclaimed space plus free space per drive.
+      Option 2 inside it is a read-only AppData deep scan ranking the top 20
+      folders by size. Admin-only targets are skipped unless elevated.
 
 RAM TOOLS [4]
 Cached/standby memory is reusable already. Clearing it or trimming working sets
